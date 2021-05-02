@@ -30,63 +30,39 @@
 	<body>
 		<div class="wrapper">
 			<div class="total">
-				<div class="total">Total $<span id="total">0</span></div>
+				<div class="total">Your total is: $<span id="total">0</span></div>
 			</div>
 
-			<div class="form pb-5">
-				<div class="input-group">
-					<input
-						type="text"
-						class="form-control form-control-lg w-50"
-						id="t-name"
-						placeholder="Name of transaction"
-					/>
-					<input
-						type="number"
-						min="0"
-						id="t-amount"
-						class="form-control form-control-lg"
-						placeholder="$0"
-					/>
-					<button
-						id="add-btn"
-						type="button"
-						class="btn btn-lg btn-outline-primary"
-					>
-						<i class="fa fa-plus buttons"></i> Income
-					</button>
-					<button
-						id="sub-btn"
-						type="button"
-						class="btn btn-lg btn-outline-primary"
-					>
-						<i class="fa fa-minus buttons"></i> Expense
-					</button>
-				</div>
-
+			<div class="form">
+				<input type="text" id="t-name" placeholder="Name of transaction" />
+				<input
+					type="number"
+					min="0"
+					id="t-amount"
+					placeholder="Transaction amount"
+				/>
+				<button id="add-btn">
+					<i class="fa fa-plus buttons"></i> Add Funds
+				</button>
+				<button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
 				<p class="error"></p>
 			</div>
-			<div class="row">
-				<div class="col-4">
-					<div class="transactions">
-						<table>
-							<thead>
-								<th>Transaction</th>
-								<th>Amount</th>
-							</thead>
-							<tbody id="tbody"></tbody>
-						</table>
-					</div>
-				</div>
 
-				<div class="col">
-					<canvas id="myChart"></canvas>
-				</div>
+			<div class="transactions">
+				<table>
+					<thead>
+						<th>Transaction</th>
+						<th>Amount</th>
+					</thead>
+					<tbody id="tbody"></tbody>
+				</table>
 			</div>
+
+			<canvas id="myChart"></canvas>
 		</div>
+
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-		<script src="./js/index.js"></script>
-		<script src="./js/idb.js"></script>
+		<script src="js/index.js"></script>
 	</body>
 
 	<script>
