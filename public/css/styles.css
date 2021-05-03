@@ -1,27 +1,26 @@
 body {
-	font-size: 120%;
 	font-family: Arial;
-}
-
-button,
-input {
-	font-size: 100%;
-	font-family: Arial;
+	overflow-x: hidden;
+	height: 100vh;
 }
 
 table {
 	width: 100%;
+	border: 1px solid gray;
+}
+thead {
+	border-bottom: 1px solid gray;
 }
 
 td,
 th {
-	border: 1px solid #dddddd;
 	text-align: left;
-	padding: 8px;
+	border-bottom: 1px solid gray;
+	padding: 16px;
 }
 
-tr:nth-child(even) {
-	background-color: #dddddd;
+th {
+	width: 75%;
 }
 
 .error {
@@ -30,24 +29,19 @@ tr:nth-child(even) {
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 825px;
-	text-align: center;
 }
 
 .total {
 	font-size: 150%;
-	text-decoration: underline;
+	margin: 56px;
 }
 
-.form {
-	margin-top: 25px;
-	width: 100%;
+#chart.col {
+	height: 100%;
 }
 
 .transactions {
-	text-align: left;
-	max-height: 300px;
-	overflow: auto;
-	width: 90%;
-	margin: 0 auto;
+	height: 100vh;
+	overflow-y: scroll;
+	border-right: 1px solid gray;
 }

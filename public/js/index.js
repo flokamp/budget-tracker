@@ -31,9 +31,10 @@ function populateTable() {
 	transactions.forEach((transaction) => {
 		// create and populate a table row
 		let tr = document.createElement("tr");
+
 		tr.innerHTML = `
       <td>${transaction.name}</td>
-      <td>${transaction.value}</td>
+      <td> $ ${transaction.value}</td>
     `;
 
 		tbody.appendChild(tr);
@@ -48,7 +49,7 @@ function populateChart() {
 	// create date labels for chart
 	let labels = reversed.map((t) => {
 		let date = new Date(t.date);
-		return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+		return `${date.getMonth() + 1}/${date.getDate()}`;
 	});
 
 	// create incremental values for chart
@@ -66,16 +67,40 @@ function populateChart() {
 
 	myChart = new Chart(ctx, {
 		type: "line",
+		backgroundColor: "white",
 		data: {
 			labels,
 			datasets: [
 				{
-					label: "Total Over Time",
 					fill: true,
-					backgroundColor: "#6666ff",
+					backgroundColor: "#6622CC",
+					pointRadius: 4,
+					borderColor: "#321164",
+					pointBorderColor: "#321164",
+					borderWidth: "4",
 					data,
 				},
 			],
+		},
+		options: {
+			responsive: true,
+			legend: false,
+			title: {
+				display: true,
+				text: "Budget outlook over time",
+				fontSize: 24,
+			},
+			scales: {
+				yAxes: [
+					{
+						ticks: {
+							callback: function (value, index, values) {
+								return "$" + value;
+							},
+						},
+					},
+				],
+			},
 		},
 	});
 }

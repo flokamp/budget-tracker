@@ -29,40 +29,61 @@
 	</head>
 	<body>
 		<div class="wrapper">
-			<div class="total">
-				<div class="total">Your total is: $<span id="total">0</span></div>
-			</div>
+			<div class="row">
+				<div class="col">
+					<div class="transactions p-5">
+						<h1 class="mb-4">Budget Tracker</h1>
+						<div class="form">
+							<div class="input-group">
+								<input
+									type="text"
+									class="form-control w-50 m-1 rounded-0"
+									id="t-name"
+									placeholder="New transaction"
+								/>
+								<input
+									type="number"
+									min="0"
+									id="t-amount"
+									class="form-control m-1"
+									placeholder="0"
+								/>
+								<button
+									id="sub-btn"
+									type="button"
+									class="btn btn-outline-danger m-1"
+								>
+									deduct
+								</button>
+								<button
+									id="add-btn"
+									type="button"
+									class="btn btn-outline-success m-1 rounded-0"
+								>
+									add
+								</button>
+							</div>
 
-			<div class="form">
-				<input type="text" id="t-name" placeholder="Name of transaction" />
-				<input
-					type="number"
-					min="0"
-					id="t-amount"
-					placeholder="Transaction amount"
-				/>
-				<button id="add-btn">
-					<i class="fa fa-plus buttons"></i> Add Funds
-				</button>
-				<button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-				<p class="error"></p>
-			</div>
+							<p class="error"></p>
+						</div>
+						<table>
+							<thead class="total">
+								<th>Total</th>
+								<th id="total">$ 0</th>
+							</thead>
+							<tbody id="tbody"></tbody>
+						</table>
+					</div>
+				</div>
 
-			<div class="transactions">
-				<table>
-					<thead>
-						<th>Transaction</th>
-						<th>Amount</th>
-					</thead>
-					<tbody id="tbody"></tbody>
-				</table>
+				<div class="col" id="chart">
+					<canvas id="myChart"></canvas>
+				</div>
 			</div>
-
-			<canvas id="myChart"></canvas>
 		</div>
-
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-		<script src="js/index.js"></script>
+		<script src="./js/index.js"></script>
+		<script src="./js/idb.js"></script>
 	</body>
 
 	<script>
