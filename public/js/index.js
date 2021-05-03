@@ -19,9 +19,9 @@ function populateTotal() {
 	let total = transactions.reduce((total, t) => {
 		return total + parseInt(t.value);
 	}, 0);
-
+	let formatTotal = total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 	let totalEl = document.querySelector("#total");
-	totalEl.textContent = total;
+	totalEl.textContent = "$ " + formatTotal;
 }
 
 function populateTable() {
@@ -31,10 +31,13 @@ function populateTable() {
 	transactions.forEach((transaction) => {
 		// create and populate a table row
 		let tr = document.createElement("tr");
+		let formatVal = transaction.value
+			.toString()
+			.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 
 		tr.innerHTML = `
       <td>${transaction.name}</td>
-      <td> $ ${transaction.value}</td>
+      <td> $ ${formatVal}</td>
     `;
 
 		tbody.appendChild(tr);
