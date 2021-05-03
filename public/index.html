@@ -28,59 +28,63 @@
 		<title>Budget Tracker</title>
 	</head>
 	<body>
-		<div class="wrapper">
-			<div class="row">
-				<div class="col">
-					<div class="transactions p-5">
-						<h1 class="mb-4">Budget Tracker</h1>
-						<div class="form">
-							<div class="input-group">
-								<input
-									type="text"
-									class="form-control w-50 m-1 rounded-0"
-									id="t-name"
-									placeholder="New transaction"
-								/>
-								<input
-									type="number"
-									min="0"
-									id="t-amount"
-									class="form-control m-1"
-									placeholder="0"
-								/>
-								<button
-									id="sub-btn"
-									type="button"
-									class="btn btn-outline-danger m-1"
-								>
-									deduct
-								</button>
-								<button
-									id="add-btn"
-									type="button"
-									class="btn btn-outline-success m-1 rounded-0"
-								>
-									add
-								</button>
-							</div>
-
-							<p class="error"></p>
-						</div>
-						<table>
-							<thead class="total">
-								<th>Total</th>
-								<th id="total">$ 0</th>
-							</thead>
-							<tbody id="tbody"></tbody>
-						</table>
-					</div>
+		<div class="row">
+			<nav class="navbar navbar-dark bg-dark">
+				<div class="container-fluid">
+					<span class="navbar-brand">Budget Tracker</span>
 				</div>
+			</nav>
+			<div class="col">
+				<div class="transactions p-4 overflow-auto">
+					<div class="form">
+						<div class="input-group">
+							<input
+								type="text"
+								class="form-control w-50 m-1 rounded-0"
+								id="t-name"
+								placeholder="New transaction"
+							/>
+							<input
+								type="number"
+								min="0"
+								id="t-amount"
+								class="form-control m-1"
+								placeholder="0"
+							/>
+							<button
+								id="sub-btn"
+								type="button"
+								class="btn btn-outline-danger m-1"
+							>
+								deduct
+							</button>
+							<button
+								id="add-btn"
+								type="button"
+								class="btn btn-outline-success m-1 rounded-0"
+							>
+								add
+							</button>
+						</div>
 
-				<div class="col" id="chart">
-					<canvas id="myChart"></canvas>
+						<p class="error"></p>
+					</div>
+					<table>
+						<thead class="total">
+							<th>Total</th>
+							<th id="total">$ 0</th>
+						</thead>
+						<tbody id="tbody"></tbody>
+					</table>
 				</div>
 			</div>
+
+			<div class="col p-4" id="chart">
+				<h3 class="mb-4">Budget outlook over time</h3>
+				<canvas id="myChart"></canvas>
+			</div>
 		</div>
+
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 		<script src="./js/index.js"></script>
 		<script src="./js/idb.js"></script>

@@ -1,21 +1,20 @@
 body {
 	font-family: Arial;
-	overflow-x: hidden;
-	height: 100vh;
+	overflow: hidden;
 }
 
 table {
 	width: 100%;
-	border: 1px solid gray;
+	border: 1px solid rgb(196, 196, 196);
 }
 thead {
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgb(196, 196, 196);
 }
 
 td,
 th {
 	text-align: left;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid rgb(196, 196, 196);
 	padding: 16px;
 }
 
@@ -27,21 +26,29 @@ th {
 	color: red;
 }
 
-.wrapper {
+.row {
 	margin: 0 auto;
+	overflow: scroll;
 }
 
 .total {
-	font-size: 150%;
+	font-size: 120%;
 	margin: 56px;
-}
-
-#chart.col {
-	height: 100%;
 }
 
 .transactions {
 	height: 100vh;
-	overflow-y: scroll;
-	border-right: 1px solid gray;
+	border-right: 1px solid rgb(196, 196, 196);
+}
+
+/* Hide number arrows for Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Hide number arrows for Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
 }

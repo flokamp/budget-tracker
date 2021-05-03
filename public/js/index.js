@@ -76,10 +76,9 @@ function populateChart() {
 			datasets: [
 				{
 					fill: true,
-					backgroundColor: "#6622CC",
+					backgroundColor: "#92BCEA",
 					pointRadius: 4,
-					borderColor: "#321164",
-					pointBorderColor: "#321164",
+					borderColor: "#2B59C3",
 					borderWidth: "4",
 					data,
 				},
@@ -88,11 +87,7 @@ function populateChart() {
 		options: {
 			responsive: true,
 			legend: false,
-			title: {
-				display: true,
-				text: "Budget outlook over time",
-				fontSize: 24,
-			},
+
 			scales: {
 				yAxes: [
 					{
